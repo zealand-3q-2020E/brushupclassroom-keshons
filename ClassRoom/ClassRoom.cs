@@ -6,15 +6,29 @@ using System.Threading.Tasks;
 
 namespace ClassRoom
 {
-    class ClassRoom
+    public class ClassRoom
     {
-        public ClassRoom()
+        private List<Student> _class;
+
+        public ClassRoom(string className, DateTime semesterStart)
         {
-            
+            _class = new List<Student>();
+            ClassName = className;
+            SemesterStart = semesterStart;
         }
 
-        public string Classname { get; set; }
-        public List<string> Class { get; set; }
+        public string ClassName { get; set; }
+
+        public List<Student> Class
+        {
+            get { return _class;}
+            set { _class = value; }
+        }
         public DateTime SemesterStart { get; set; }
+
+        public override string ToString()
+        {
+            return "Class Name: " + ClassName + " Beginning of the semester: " + SemesterStart;
+        }
     }
 }

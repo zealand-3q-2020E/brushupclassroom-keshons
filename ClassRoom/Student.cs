@@ -20,5 +20,10 @@ namespace ClassRoom
         public int BirthMonth { get; set; }
 
         public int Birthday { get; set; }
+
+        public override string ToString()
+        {
+            return Name + " Birthmonth: " + BirthMonth + " BirthDay: " + Birthday;
+        }
     }
 }
